@@ -46,6 +46,8 @@ function App() {
 
   return (
     <div>
+      <h4 style={{ textAlign: 'center', marginTop: '20px' }}>香氛选择</h4>
+
       {step === 0 ? (
         <GenderSelectionPage onSelectGender={handleSelectGender} />
       ) : (

@@ -3,7 +3,6 @@ import React from 'react';
 function SelectImagePage({ images, onSelect, selectedItems, step }) {
   return (
     <div className="container">
-      <h1>Choose an image - Step {step}</h1>
       <div className="row" style={{ marginRight: '-5px', marginLeft: '-5px' }}>
         {images.map((image, index) => (
           <div key={index} className="col-md-2 col-6" style={{ padding: '8px' }}>
