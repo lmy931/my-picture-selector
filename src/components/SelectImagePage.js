@@ -2,17 +2,19 @@ import React from 'react';
 
 function SelectImagePage({ images, onSelect, selectedItems, step }) {
   return (
-    <div>
+    <div className="container">
       <h1>Choose an image - Step {step}</h1>
-      <div>
+      <div className="row">
         {images.map((image, index) => (
-          <img
-            key={index}
-            src={image.src}
-            alt={image.alt}
-            style={{ width: '100px', cursor: 'pointer', border: selectedItems.includes(image.alt) ? '3px solid blue' : 'none' }}
-            onClick={() => onSelect(image)}
-          />
+          <div key={index} className="col-md-2 col-6" style={{ marginBottom: '20px' }}> 
+            <img
+              src={image.src}
+              alt={image.alt}
+              className={`img-fluid ${selectedItems.includes(image.alt) ? 'selected' : ''}`}
+              onClick={() => onSelect(image)}
+              style={{ cursor: 'pointer', border: selectedItems.includes(image.alt) ? '3px solid blue' : 'none' }}
+            />
+          </div>
         ))}
       </div>
     </div>
