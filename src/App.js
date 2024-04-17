@@ -45,18 +45,18 @@ function App() {
   };
 
   return (
-    <div>
-      <h4 style={{ textAlign: 'center', marginTop: '20px' }}>香氛选择</h4>
-
-      {step === 0 ? (
-        <GenderSelectionPage onSelectGender={handleSelectGender} />
-      ) : (
-        <div>
-          <SelectImagePage images={imagesByStep[step-1]} selectedItems={selections[step-1]} onSelect={(image) => handleSelect(step-1, image)} step={step} />
-          <button onClick={handleBack} disabled={step === 1}>Back</button>
-          <button onClick={handleNext} disabled={step === 7 && selections.every(group => group.length === 0)}>Next</button>
-        </div>
-      )}
+    <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
+      <div>
+        {step === 0 ? (
+          <GenderSelectionPage onSelectGender={handleSelectGender} />
+        ) : (
+          <div>
+            <SelectImagePage images={imagesByStep[step-1]} selectedItems={selections[step-1]} onSelect={(image) => handleSelect(step-1, image)} step={step} />
+            <button onClick={handleBack} disabled={step === 1}>Back</button>
+            <button onClick={handleNext} disabled={step === 7 && selections.every(group => group.length === 0)}>Next</button>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
