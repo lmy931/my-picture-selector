@@ -1,0 +1,20 @@
+<html>
+<head><title>404 Not Found</title></head>
+<body>
+<h1>404 Not Found</h1>
+<ul>
+<li>Code: NoSuchKey</li>
+<li>Message: The specified key does not exist.</li>
+<li>Key: assets/selection-images/309_footwear_yellow_sandals.jpg</li>
+<li>RequestId: TQCWY03EDRKBESD6</li>
+<li>HostId: MZD3IooMxXzrXZuTE4QW5aB6nOzWVXqbEF8/vG0UrHinn/bVsgRqzXs2f88zA//APzdKR5gzm0U=</li>
+</ul>
+<h3>An Error Occurred While Attempting to Retrieve a Custom Error Document</h3>
+<ul>
+<li>Code: NoSuchKey</li>
+<li>Message: The specified key does not exist.</li>
+<li>Key: error.html</li>
+</ul>
+<hr/>
+</body>
+</html>
