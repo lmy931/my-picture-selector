@@ -14,13 +14,17 @@ code {
     monospace;
 }
 
-
-.btn-custom {
-  background-color: #ff4500; /* 橘红色 */
-  color: white; /* 设置文字颜色为白色 */
-}
-
 .btn-custom:hover {
   background-color: #e03e00; /* 深一点的橘红色用于鼠标悬停效果 */
   color: white; /* 设置文字颜色为白色 */
+}
+
+
+.btn-custom {
+  background-color: #ff4500;
+  color: white;
+  min-width: 160px;
+  min-height: 30px;
+  text-align: center;
+  font-size: 13px;
 }

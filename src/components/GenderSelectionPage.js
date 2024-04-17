@@ -4,11 +4,11 @@ function GenderSelectionPage({ onSelectGender }) {
   return (
     <div className="text-center">
       <h1>找到真正属于您的香氛</h1>
-      <h4 style={{ marginTop: '40px' }}>WHO ARE YOU?</h4>
-      <div className="d-flex flex-column flex-md-row justify-content-center" style={{ marginTop: '40px' }}>
-        <button className="btn btn-custom flex-fill mx-1 mb-2 mb-md-0" onClick={() => onSelectGender('Man')}>Man</button>
-        <button className="btn btn-custom flex-fill mx-1 mb-2 mb-md-0" onClick={() => onSelectGender('Woman')}>Woman</button>
-        <button className="btn btn-custom flex-fill mx-1" onClick={() => onSelectGender("It doesn't matter")}>It doesn't matter</button>
+      <h4 className="mt-5" ><strong>WHO ARE YOU?</strong></h4>
+      <div className="d-flex flex-column flex-md-row justify-content-center mt-4">
+        <button className="btn btn-custom flex-fill mx-3 mb-2 mb-md-0" onClick={() => onSelectGender('Man')}>MAN</button>
+        <button className="btn btn-custom flex-fill mx-3 mb-2 mb-md-0" onClick={() => onSelectGender('Woman')}>WOMAN</button>
+        <button className="btn btn-custom flex-fill mx-3" onClick={() => onSelectGender("It doesn't matter")}>IT DOESN'T MATTER</button>
       </div>
     </div>
   );
