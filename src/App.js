@@ -52,9 +52,13 @@ function App() {
         ) : (
           <div>
             <SelectImagePage images={imagesByStep[step-1]} selectedItems={selections[step-1]} onSelect={(image) => handleSelect(step-1, image)} step={step} />
-            <div className="d-flex justify-content-between">
-              <button className="btn btn-outline-primary" onClick={handleBack} disabled={step === 0}>Back</button>
-              <button className="btn btn-outline-primary" onClick={handleNext} disabled={step === 8 && selections.every(group => group.length === 0)}>Next</button>
+            <div className="d-flex justify-content-between" style={{ padding: '20px'}}>
+              <button className="btn btn-outline-light" onClick={handleBack} disabled={step === 0}>
+                &larr; Back
+              </button>
+              <button className="btn btn-outline-light" onClick={handleNext} disabled={step === 8 && selections.every(group => group.length === 0)}>
+                Next &rarr;
+              </button>
             </div>
           </div>
         )}
