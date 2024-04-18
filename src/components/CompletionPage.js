@@ -3,7 +3,7 @@ import React from 'react';
 function CompletionPage({ selectedImages }) {
   // 选择随机图片数量（比如随机选择 3 张图片）
   const randomImages = selectedImages.sort(() => 0.5 - Math.random()).slice(0, 3);
-
+  console.log(selectedImages);
   return (
     <div className="completion-page" style={{ position: 'relative', height: '100vh', width: '100vw', backgroundColor: 'white' }}>
       {randomImages.map((img, index) => (

@@ -14,11 +14,11 @@ function SelectImagePage({ images, onSelect, selectedItems, step }) {
               <img
                 src={image.src}
                 alt={image.alt}
-                className={`img-fluid ${selectedItems.includes(image.alt) ? 'selected' : ''}`}
+                className={`img-fluid ${selectedItems.includes(image.src) ? 'selected' : ''}`} // 使用 image.src 判断是否选中
                 onClick={() => onSelect(image)}
                 style={{
                   cursor: 'pointer',
-                  border: selectedItems.includes(image.alt) ? '3px solid blue' : 'none',
+                  border: selectedItems.includes(image.src) ? '3px solid blue' : 'none', // 使用 image.src 判断边框
                   position: 'absolute',
                   top: 0,
                   left: 0,

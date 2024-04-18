@@ -19,19 +19,20 @@ function App() {
 
   const handleSelect = (step, image) => {
     const stepSelections = selections[step];
-    const index = stepSelections.indexOf(image.alt);
+    const index = stepSelections.indexOf(image.src); // 使用 image.src 而不是 image.alt 来识别图像
     if (index === -1) {
       if (stepSelections.length < 2) {
         const newSelections = [...selections];
-        newSelections[step] = [...stepSelections, image.alt];
+        newSelections[step] = [...stepSelections, image.src]; // 将 image.src 添加到选择中
         setSelections(newSelections);
       }
     } else {
       const newSelections = [...selections];
-      newSelections[step] = stepSelections.filter(item => item !== image.alt);
+      newSelections[step] = stepSelections.filter(item => item !== image.src); // 移除 image.src
       setSelections(newSelections);
     }
   };
+  
 
   const handleNext = () => {
     if (step < 7) {
