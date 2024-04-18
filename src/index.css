@@ -23,14 +23,12 @@ code {
 .btn-custom {
   background-color: #ff4500;
   color: white;
-  min-width: 160px;
+  width: 100%;
   min-height: 30px;
   text-align: center;
   font-size: 13px;
 }
 
-
-/* 特定于小屏设备的样式 */
 @media (max-width: 768px) {
   body {
     padding-left: 40px;
@@ -40,4 +38,12 @@ code {
   .btn-custom {
     margin-bottom: 15px; /* 增加在小屏幕上的间距 */
   }
+
+  .d-flex {
+    flex-direction: column; /* 确保在小屏设备上按钮纵向排列 */
+    align-items: center; /* 确保容器内元素在纵向上居中 */
+    justify-content: center; /* 确保容器内元素在横向上居中 */
+  }
 }
+
+
