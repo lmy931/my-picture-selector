@@ -6,13 +6,13 @@ import getImagesByGender from './utils/imageHelper';
 function App() {
   const [step, setStep] = useState(0);
   const [gender, setGender] = useState('');
-  const [selections, setSelections] = useState(new Array(7).fill([]));
+  const [selections, setSelections] = useState(new Array(8).fill([])); // 现在有8个图像选择步骤
 
   const imagesByStep = getImagesByGender(gender);
 
   const handleSelectGender = selectedGender => {
     setGender(selectedGender);
-    setStep(1);  // Move to the first step of image selection
+    setStep(1); // 第一步完成，移动到图像选择的第一步
   };
 
   const handleSelect = (step, image) => {
@@ -32,7 +32,7 @@ function App() {
   };
 
   const handleNext = () => {
-    if (step < 7) {
+    if (step < 8) { // 修改最大步骤数
       setStep(step + 1);
     } else {
       console.log('All done', { gender, selections });
@@ -41,7 +41,7 @@ function App() {
   };
 
   const handleBack = () => {
-    if (step > 1) setStep(step - 1);
+    if (step > 0) setStep(step - 1); // 允许回退到选择性别的步骤
   };
 
   return (
@@ -53,8 +53,8 @@ function App() {
           <div>
             <SelectImagePage images={imagesByStep[step-1]} selectedItems={selections[step-1]} onSelect={(image) => handleSelect(step-1, image)} step={step} />
             <div className="d-flex justify-content-between">
-              <button className="btn btn-outline-primary" onClick={handleBack} disabled={step === 1}>Back</button>
-              <button className="btn btn-outline-primary" onClick={handleNext} disabled={step === 7 && selections.every(group => group.length === 0)}>Next</button>
+              <button className="btn btn-outline-primary" onClick={handleBack} disabled={step === 0}>Back</button>
+              <button className="btn btn-outline-primary" onClick={handleNext} disabled={step === 8 && selections.every(group => group.length === 0)}>Next</button>
             </div>
           </div>
         )}
