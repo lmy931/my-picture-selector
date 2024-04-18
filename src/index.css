@@ -45,3 +45,11 @@ code {
     justify-content: center; /* 确保容器内元素在横向上居中 */
   }
 }
+
+.btn-outline-light, .btn-outline-light:active, .btn-outline-light:focus, .btn-outline-light:hover {
+  background-color: black;
+  color: white;            
+  border-color: white;     
+  outline: none;            
+  box-shadow: none;         
+}
