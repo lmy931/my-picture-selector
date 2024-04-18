@@ -53,3 +53,19 @@ code {
   outline: none;            
   box-shadow: none;         
 }
+
+/* Default styles for desktop */
+.img-responsive {
+  max-width: 200px; /* Larger size for desktop */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Smaller devices (tablets, 768px and below) */
+@media (max-width: 768px) {
+  .img-responsive {
+    max-width: 120px; /* Smaller size for mobile */
+  }
+}
+
