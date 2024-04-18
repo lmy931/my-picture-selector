@@ -30,7 +30,7 @@ code {
 }
 
 @media (max-width: 768px) {
-  body {
+  .home-padding {
     padding-left: 40px;
     padding-right: 40px;
   }

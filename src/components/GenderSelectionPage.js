@@ -2,7 +2,7 @@ import React from 'react';
 
 function GenderSelectionPage({ onSelectGender }) {
   return (
-    <div className="text-center">
+    <div className="text-center home-padding">
       <h1>找到真正属于您的香氛</h1>
       <h4 className="mt-5"><strong>WHO ARE YOU?</strong></h4>
       <div className="d-flex flex-column flex-md-row justify-content-center mt-4">
