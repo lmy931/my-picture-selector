@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import GenderSelectionPage from './components/GenderSelectionPage';
 import SelectImagePage from './components/SelectImagePage';
+import CompletionPage from './components/CompletionPage';  // 确保你有一个显示最后完成页面的组件
 import getImagesByGender from './utils/imageHelper';
 
 function App() {
   const [step, setStep] = useState(0);
   const [gender, setGender] = useState('');
   const [selections, setSelections] = useState(new Array(8).fill([]));
+  const [isCompleted, setIsCompleted] = useState(false);  // 新状态，用于追踪是否完成了选择
 
   const imagesByStep = getImagesByGender(gender);
 
@@ -35,14 +37,17 @@ function App() {
     if (step < 7) {
       setStep(step + 1);
     } else {
-      console.log('All done', { gender, selections });
-      // Additional code for backend could be added here
+      setIsCompleted(true);  // 设置完成状态
     }
   };
 
   const handleBack = () => {
     if (step > 0) setStep(step - 1);
   };
+
+  if (isCompleted) {
+    return <CompletionPage selectedImages={selections.flat()} />; // 显示完成页面，传递选中的图片
+  }
 
   return (
     <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
