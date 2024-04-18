@@ -32,7 +32,6 @@ function App() {
       setSelections(newSelections);
     }
   };
-  
 
   const handleNext = () => {
     if (step < 7) {
@@ -47,7 +46,7 @@ function App() {
   };
 
   if (isCompleted) {
-    return <CompletionPage selectedImages={selections.flat()} />; // 显示完成页面，传递选中的图片
+    return <CompletionPage selectedImages={selections.flat()} gender={gender} />; // 显示完成页面，传递选中的图片和性别
   }
 
   return (
