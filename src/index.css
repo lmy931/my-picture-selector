@@ -28,3 +28,16 @@ code {
   text-align: center;
   font-size: 13px;
 }
+
+
+/* 特定于小屏设备的样式 */
+@media (max-width: 768px) {
+  body {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .btn-custom {
+    margin-bottom: 15px; /* 增加在小屏幕上的间距 */
+  }
+}
