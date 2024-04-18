@@ -20,8 +20,13 @@ function CompletionPage({ selectedImages, gender }) {
           </div>
         ))}
       </div>
-      {/* 调整 top 属性以减少标题与图片之间的距离 */}
-      <h1 style={{ position: 'absolute', top: '50%', width: '100%', textAlign: 'center', color: 'red' }}>Our Suggestions</h1> {/* 确保标题位于图片下方 */}
+      <h1 style={{ position: 'absolute', top: '65%', width: '100%', textAlign: 'center', color: 'red' }}>Our Suggestions</h1>
+      <div style={{ position: 'absolute', top: '75%', width: '100%', textAlign: 'center' }}>
+        <img src="/images/products/sample.jpg" alt="Product Image" style={{ maxWidth: '200px', height: 'auto' }} />
+        <h3 style={{ color: 'white' }}>Product Title</h3>
+        <p style={{ color: 'white' }}>This is a brief introduction of the product, highlighting its main features.</p>
+        <p style={{ color: 'white' }}>Explore more about this product to understand why it fits your needs.</p>
+      </div>
     </div>
   );
 }
