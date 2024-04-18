@@ -36,7 +36,7 @@ function App() {
       setStep(step + 1);
     } else {
       console.log('All done', { gender, selections });
-      // 这里可以添加代码以发送数据到后端
+      // Additional code for backend could be added here
     }
   };
 
@@ -46,14 +46,16 @@ function App() {
 
   return (
     <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '100vh' }}>
-      <div>
+      <div className="container">
         {step === 0 ? (
           <GenderSelectionPage onSelectGender={handleSelectGender} />
         ) : (
           <div>
             <SelectImagePage images={imagesByStep[step-1]} selectedItems={selections[step-1]} onSelect={(image) => handleSelect(step-1, image)} step={step} />
-            <button onClick={handleBack} disabled={step === 1}>Back</button>
-            <button onClick={handleNext} disabled={step === 7 && selections.every(group => group.length === 0)}>Next</button>
+            <div className="d-flex justify-content-between">
+              <button className="btn btn-outline-primary" onClick={handleBack} disabled={step === 1}>Back</button>
+              <button className="btn btn-outline-primary" onClick={handleNext} disabled={step === 7 && selections.every(group => group.length === 0)}>Next</button>
+            </div>
           </div>
         )}
       </div>
