@@ -18,7 +18,7 @@ function SelectImagePage({ images, onSelect, selectedItems, step }) {
                 onClick={() => onSelect(image)}
                 style={{
                   cursor: 'pointer',
-                  border: selectedItems.includes(image.src) ? '3px solid blue' : 'none', // 使用 image.src 判断边框
+                  border: selectedItems.includes(image.src) ? '3px solid red' : 'none', // 使用 image.src 判断边框
                   position: 'absolute',
                   top: 0,
                   left: 0,

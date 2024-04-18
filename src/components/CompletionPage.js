@@ -24,7 +24,12 @@ function CompletionPage({ selectedImages, gender }) {
       <div style={{ position: 'absolute', top: '50%', left: '0', right: '0', bottom: '0', backgroundColor: 'white', padding: '20px' }}>
         <h1 style={{ textAlign: 'center', color: 'red' }}>Our Suggestions</h1>
         <div style={{ textAlign: 'center' }}>
-          <img src="/images/products/sample.jpg" alt="Product Image" style={{ maxWidth: '200px', height: 'auto' }} />
+        <img 
+          src={`${process.env.REACT_APP_BASE_PATH}/images/products/sample.jpg`} 
+          alt="Product Image" 
+          style={{ maxWidth: '200px', height: 'auto' }} 
+        />
+
           <h3 style={{ color: 'black' }}>Product Title</h3>
           <p style={{ color: 'black' }}>This is a brief introduction of the product, highlighting its main features.</p>
           <p style={{ color: 'black' }}>Explore more about this product to understand why it fits your needs.</p>

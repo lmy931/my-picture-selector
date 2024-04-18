@@ -1,7 +1,6 @@
 // utils/imageHelper.js
 const getImagesByGender = (gender) => {
-  const basePath = '/images/';
-  const path = 'options/';
+  const path = process.env.REACT_APP_BASE_PATH + '/images/options/';
 
   const imageSets = {
     Man: [
@@ -35,7 +34,7 @@ const getImagesByGender = (gender) => {
 
   return Array.from({ length: 7 }, (_, i) => {
     return (imageSets[gender] && imageSets[gender][i] || imageSets['Neutral'][i % imageSets['Neutral'].length])
-      .map(img => ({ src: `${basePath}${path}${img}`, alt: `${gender} Image ${img}` }));
+      .map(img => ({ src: `${path}${img}`, alt: `${gender} Image ${img}` }));
   });
 };
 
