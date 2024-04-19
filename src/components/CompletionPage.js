@@ -49,7 +49,7 @@ function CompletionPage({ selectedImages, gender }) {
         padding: '40px', 
         flex: '1 0 auto' // 同样改为 auto
       }}>
-        <h1 style={{ color: 'red' }}>Our Suggestions</h1>
+        <h2 style={{ color: 'red' }}>Our Suggestions</h2>
         <img 
           src={`${process.env.REACT_APP_BASE_PATH}/images/products/sample.jpg`} 
           alt="Product Image" 
