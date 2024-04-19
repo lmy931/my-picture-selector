@@ -7,14 +7,14 @@ function CompletionPage({ selectedImages, gender }) {
     <div className="completion-page" style={{
       display: 'flex',
       flexDirection: 'column',
-      minHeight: '100vh', // 改为 minHeight 确保至少覆盖整个视口
+      minHeight: '100vh', // Ensure it covers the entire viewport
       backgroundColor: 'white'
     }}>
-      {/* 黑色背景部分 */}
+      {/* Black background section */}
       <div style={{
         backgroundColor: 'black',
         padding: '20px 0',
-        flex: '1 0 auto' // 改为 auto 让内容自适应高度
+        flex: '1 0 auto' // Change to auto to allow content height to adapt
       }}>
         <h2 style={{
           color: 'red',
@@ -43,21 +43,34 @@ function CompletionPage({ selectedImages, gender }) {
           ))}
         </div>
       </div>
-      {/* 白色背景部分 */}
+      {/* White background section */}
       <div style={{ 
         textAlign: 'center', 
-        padding: '40px', 
-        flex: '1 0 auto' // 同样改为 auto
+        padding: '30px', 
+        flex: '1 0 auto' // Changed to auto as well
       }}>
         <h2 style={{ color: 'red' }}>Our Suggestions</h2>
         <img 
-          src={`${process.env.REACT_APP_BASE_PATH}/images/products/sample.jpg`} 
+          src={`${process.env.REACT_APP_BASE_PATH}/images/products/sample.png`} 
           alt="Product Image" 
-          style={{ maxWidth: '200px', height: 'auto' }} 
+          style={{ maxWidth: '200px', height: 'auto', padding: '20px' }} 
         />
-        <h3 style={{ color: 'black' }}>Product Title</h3>
-        <p style={{ color: 'black' }}>This is a brief introduction of the product, highlighting its main features.</p>
-        <p style={{ color: 'black' }}>Explore more about this product to understand why it fits your needs.</p>
+        <h3 style={{ color: 'black' }}>Air Aroma</h3>
+        <p style={{ color: 'black' }}>Each fragrance was given its own unique icon, combined with simple clean type</p>
+        <p style={{ color: 'black' }}>allows customers to easily identify each scent at a glance while standing out on the shelf from other brands.</p>
+        {/* Discover More button */}
+        <button style={{
+          marginTop: '20px',
+          padding: '10px 20px',
+          fontSize: '1em',
+          backgroundColor: 'black',
+          color: 'white',
+          border: 'none',
+          borderRadius: '5px',
+          cursor: 'pointer'
+        }}>
+          Discover More &rarr;
+        </button>
       </div>
     </div>
   );
