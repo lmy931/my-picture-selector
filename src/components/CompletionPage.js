@@ -8,7 +8,7 @@ function CompletionPage({ selectedImages, gender }) {
       display: 'flex',
       flexDirection: 'column',
       minHeight: '100vh', // Ensure it covers the entire viewport
-      backgroundColor: 'white'
+      backgroundColor: '#f2f2f2'
     }}>
       {/* Black background section */}
       <div style={{
@@ -55,17 +55,17 @@ function CompletionPage({ selectedImages, gender }) {
           alt="Product Image" 
           style={{ maxWidth: '200px', height: 'auto', padding: '20px' }} 
         />
-        <h3 style={{ color: 'black' }}>Air Aroma</h3>
-        <p style={{ color: 'black' }}>Each fragrance was given its own unique icon, combined with simple clean type</p>
-        <p style={{ color: 'black' }}>allows customers to easily identify each scent at a glance while standing out on the shelf from other brands.</p>
+        <h3 style={{ color: '#666262' }}>Amber Granda</h3>
+        <p style={{ color: '#666262' }}>A look into a deeper sense of place, warmth remains present as allure unfolds</p>
+        <p style={{ color: '#666262' }}>Italian Mandarin, Benzoin Balsam, Amber, Musk, Vanilla, Jasmine, Geranium, Patchouli</p>
         {/* Discover More button */}
         <button style={{
           marginTop: '20px',
           padding: '10px 20px',
           fontSize: '1em',
-          backgroundColor: 'black',
-          color: 'white',
-          border: 'none',
+          backgroundColor: 'transparent', // 设置背景色为透明
+          color: 'black',                 // 文字颜色为白色
+          border: '2px solid black',      // 设置边框为白色实线
           borderRadius: '5px',
           cursor: 'pointer'
         }}>
