@@ -49,15 +49,15 @@ function CompletionPage({ selectedImages, gender }) {
         padding: '30px', 
         flex: '1 0 auto' // Changed to auto as well
       }}>
-        <h2 style={{ color: 'red' }}>Our Suggestions</h2>
+        <h2 style={{ color: '#8B0000' }}>Our Suggestions</h2>
         <img 
           src={`${process.env.REACT_APP_BASE_PATH}/images/products/sample.png`} 
           alt="Product Image" 
           style={{ maxWidth: '200px', height: 'auto', padding: '20px' }} 
         />
-        <h3 style={{ color: '#666262' }}>Amber Granda</h3>
-        <p style={{ color: '#666262' }}>A look into a deeper sense of place, warmth remains present as allure unfolds</p>
-        <p style={{ color: '#666262' }}>Italian Mandarin, Benzoin Balsam, Amber, Musk, Vanilla, Jasmine, Geranium, Patchouli</p>
+        <h3 style={{ color: '#333333' }}>Amber Granda</h3>
+        <p style={{ color: '#333333' }}>A look into a deeper sense of place, warmth remains present as allure unfolds</p>
+        <p style={{ color: '#333333' }}>Italian Mandarin, Benzoin Balsam, Amber, Musk, Vanilla, Jasmine, Geranium, Patchouli</p>
         {/* Discover More button */}
         <button style={{
           marginTop: '20px',

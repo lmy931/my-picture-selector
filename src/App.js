@@ -34,7 +34,7 @@ function App() {
   };
 
   const handleNext = () => {
-    if (step < 7) {
+    if (step < 8) {
       setStep(step + 1);
     } else {
       setIsCompleted(true);  // 设置完成状态
@@ -68,7 +68,7 @@ function App() {
               <button className="btn btn-outline-light" onClick={handleBack} disabled={step === 0}>
                 &larr; Back
               </button>
-              <button className="btn btn-outline-light" onClick={handleNext} disabled={step === 8 && selections.every(group => group.length === 0)}>
+              <button className="btn btn-outline-light" onClick={handleNext} disabled={step === 9 && selections.every(group => group.length === 0)}>
                 Next &rarr;
               </button>
             </div>
