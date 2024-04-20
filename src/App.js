@@ -7,7 +7,7 @@ import getImagesByGender from './utils/imageHelper';
 function App() {
   const [step, setStep] = useState(0);
   const [gender, setGender] = useState('');
-  const [selections, setSelections] = useState(new Array(8).fill([]));
+  const [selections, setSelections] = useState(new Array(9).fill([]));
   const [isCompleted, setIsCompleted] = useState(false);  // 新状态，用于追踪是否完成了选择
 
   const imagesByStep = getImagesByGender(gender);
@@ -34,7 +34,7 @@ function App() {
   };
 
   const handleNext = () => {
-    if (step < 8) {
+    if (step < 9) {
       setStep(step + 1);
     } else {
       setIsCompleted(true);  // 设置完成状态
@@ -68,7 +68,7 @@ function App() {
               <button className="btn btn-outline-light" onClick={handleBack} disabled={step === 0}>
                 &larr; Back
               </button>
-              <button className="btn btn-outline-light" onClick={handleNext} disabled={step === 9 && selections.every(group => group.length === 0)}>
+              <button className="btn btn-outline-light" onClick={handleNext} disabled={step === 10 && selections.every(group => group.length === 0)}>
                 Next &rarr;
               </button>
             </div>
