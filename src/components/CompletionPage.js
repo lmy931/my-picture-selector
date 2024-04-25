@@ -23,13 +23,7 @@ function CompletionPage({ selectedImages, gender }) {
           textAlign: 'left',
           paddingLeft: '20px',
         }}>You Are...</h2>
-        <div className="row no-gutters" style={{
-          justifyContent: 'center',
-          margin: '110px 10% 80px 10%',
-          display: 'flex',
-          flexWrap: 'wrap',
-          alignContent: 'flex-start'
-        }}>
+        <div className="row no-gutters selected-imgs">
           {displayedImages.map((img, index) => (
             <div key={index} className="col" style={{ padding: '5px', display: 'flex', justifyContent: 'center' }}>
               <img
