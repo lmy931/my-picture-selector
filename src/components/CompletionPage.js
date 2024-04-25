@@ -1,7 +1,8 @@
 import React from 'react';
 
 function CompletionPage({ selectedImages, gender }) {
-  const displayedImages = selectedImages.sort(() => 0.5 - Math.random()).slice(0, 3);
+  const displayedImgNum = 9;
+  const displayedImages = selectedImages.sort(() => 0.5 - Math.random()).slice(0, displayedImgNum);
 
   return (
     <div className="completion-page" style={{
