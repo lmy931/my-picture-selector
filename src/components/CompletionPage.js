@@ -26,6 +26,9 @@ function CompletionPage({ selectedImages, gender }) {
         <div className="row no-gutters" style={{
           justifyContent: 'center',
           margin: '110px 10% 80px 10%',
+          display: 'flex',
+          flexWrap: 'wrap',
+          alignContent: 'flex-start'
         }}>
           {displayedImages.map((img, index) => (
             <div key={index} className="col" style={{ padding: '5px', display: 'flex', justifyContent: 'center' }}>
@@ -35,7 +38,7 @@ function CompletionPage({ selectedImages, gender }) {
                 className="img-responsive"
                 style={{
                   transform: `rotate(${Math.random() * 40 - 20}deg)`,
-                  maxWidth: '200px',
+                  maxWidth: '200px', // This will be overridden by media query on small screens
                   height: 'auto',
                   objectFit: 'cover'
                 }}
@@ -48,7 +51,7 @@ function CompletionPage({ selectedImages, gender }) {
       <div style={{ 
         textAlign: 'center', 
         padding: '30px', 
-        flex: '1 0 auto' // Changed to auto as well
+        flex: '1 0 auto'
       }}>
         <h2 style={{ color: '#8B0000' }}>Our Suggestions</h2>
         <img 
@@ -64,9 +67,9 @@ function CompletionPage({ selectedImages, gender }) {
           marginTop: '20px',
           padding: '10px 20px',
           fontSize: '1em',
-          backgroundColor: 'transparent', // 设置背景色为透明
-          color: 'black',                 // 文字颜色为白色
-          border: '2px solid black',      // 设置边框为白色实线
+          backgroundColor: 'transparent',
+          color: 'black',
+          border: '2px solid black',
           borderRadius: '5px',
           cursor: 'pointer'
         }}>
