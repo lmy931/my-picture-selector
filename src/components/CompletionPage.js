@@ -1,21 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { getRandomProduct } from '../utils/productHelper'; // Update the import path according to your project structure
 
 function CompletionPage({ selectedImages, gender }) {
   const displayedImgNum = 9;
   const displayedImages = selectedImages.sort(() => 0.5 - Math.random()).slice(0, displayedImgNum);
 
+  const [product, setProduct] = useState(null);
+
+  useEffect(() => {
+    setProduct(getRandomProduct());
+  }, []);
+
+  if (!product) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="completion-page" style={{
       display: 'flex',
       flexDirection: 'column',
-      minHeight: '100vh', // Ensure it covers the entire viewport
+      minHeight: '100vh',
       backgroundColor: '#f2f2f2'
     }}>
-      {/* Black background section */}
       <div style={{
         backgroundColor: 'black',
         padding: '20px 0',
-        flex: '1 0 auto' // Change to auto to allow content height to adapt
+        flex: '1 0 auto'
       }}>
         <h2 style={{
           color: 'red',
@@ -32,7 +42,7 @@ function CompletionPage({ selectedImages, gender }) {
                 className="img-responsive"
                 style={{
                   transform: `rotate(${Math.random() * 40 - 20}deg)`,
-                  maxWidth: '200px', // This will be overridden by media query on small screens
+                  maxWidth: '200px',
                   height: 'auto',
                   objectFit: 'cover'
                 }}
@@ -41,7 +51,6 @@ function CompletionPage({ selectedImages, gender }) {
           ))}
         </div>
       </div>
-      {/* White background section */}
       <div style={{ 
         textAlign: 'center', 
         padding: '30px', 
@@ -49,14 +58,13 @@ function CompletionPage({ selectedImages, gender }) {
       }}>
         <h2 style={{ color: '#8B0000' }}>Our Suggestions</h2>
         <img 
-          src={`${process.env.REACT_APP_BASE_PATH}/images/products/sample.png`} 
+          src={`${process.env.REACT_APP_BASE_PATH}${product.imagePath}`}
           alt="Product Image" 
           style={{ maxWidth: '200px', height: 'auto', padding: '20px' }} 
         />
-        <h3 style={{ color: '#333333' }}>Amber Granda</h3>
-        <p style={{ color: '#333333' }}>A look into a deeper sense of place, warmth remains present as allure unfolds</p>
-        <p style={{ color: '#333333' }}>Italian Mandarin, Benzoin Balsam, Amber, Musk, Vanilla, Jasmine, Geranium, Patchouli</p>
-        {/* Discover More button */}
+        <h3 style={{ color: '#333333' }}>{product.name}</h3>
+        <p style={{ color: '#333333' }}>{product.description1}</p>
+        <p style={{ color: '#333333' }}>{product.description2}</p>
         <button style={{
           marginTop: '20px',
           padding: '10px 20px',
