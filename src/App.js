@@ -22,14 +22,14 @@ function App() {
     const stepSelections = selections[step];
     const index = stepSelections.indexOf(image.src);
     if (index === -1) {
-      if (stepSelections.length < 2) {
+      if (stepSelections.length < 1) {  // 修改这里，使得每步只能选择一张图片
         const newSelections = [...selections];
-        newSelections[step] = [...stepSelections, image.src];
+        newSelections[step] = [image.src];  // 直接设置为单个图片的数组
         setSelections(newSelections);
       }
     } else {
       const newSelections = [...selections];
-      newSelections[step] = stepSelections.filter(item => item !== image.src);
+      newSelections[step] = [];  // 如果已经选择了图片，再次点击则取消选择
       setSelections(newSelections);
     }
   };
