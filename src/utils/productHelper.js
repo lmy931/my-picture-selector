@@ -47,6 +47,42 @@ const products = [
     description1: "A step through a once molten lava basin, now dried with the winds of stone queens.",
     description2: "Eucalyptus, Ravensara, Fennel, Cinnamon, Tea Tree Usage"
   },
+  {
+    name: "Lemongrass Tea", /////////////////////////////
+    imagePath: "/images/products/lemongrass_tea.png",
+    description1: "The transition from embedded to free, fresh beginnings with a renewed sense of purpose.",
+    description2: "Green Tea & Lemongrass, Lemon, Thyme, Jasmine, Musk, Cedarwood"
+  },
+  {
+    name: "Longboard",
+    imagePath: "/images/products/longboard.png",
+    description1: "Filling to the brim, then emptying to the edges, swelling and seceding.",
+    description2: "Sea Accord, Birch Foliage, Cucumber, Green Apple, Seaweed, Fir Balsam"
+  },
+  {
+    name: "Moonshot",
+    imagePath: "/images/products/moonshot.png",
+    description1: "A capsule of comfort, up and beyond, floating in the vast abyss.",
+    description2: "Mimosa, Acacia Flower, Orris, Rock Minerals, Sandalwood"
+  },
+  {
+    name: "Pomelo Pulp",
+    imagePath: "/images/products/pomelo_pulp.png",
+    description1: "A tiny silver spoon cradles citrus ice as it dissolves into smoother texture with every fan of tropic heat.",
+    description2: "Grapefruit, Lime, Ginger, Coriander, Lavender, Sandalwood"
+  },
+  {
+    name: "Saffron Suede",
+    imagePath: "/images/products/saffron_suede.png",
+    description1: "Astride the dunes under starry skies, hypnotic rhythms surround.",
+    description2: "Purple Saffron Flower, Sage, Patchouli Wood, White Suede"
+  },
+  {
+    name: "Sandalwood Gold",
+    imagePath: "/images/products/sandalwood_gold.png",
+    description1: "Heat of charred ash casts a warm glow on a vast wall of intricate formations.",
+    description2: "Sandalwood, Leather, Cardamom, Iris, Violet, Cedar"
+  },
 ];
 
 // 随机选择一个产品
