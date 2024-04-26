@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getRandomProduct } from '../utils/productHelper'; // Update the import path according to your project structure
 
 function CompletionPage({ selectedImages, gender }) {
-  const displayedImgNum = 9;
+  const displayedImgNum = 18;
   const displayedImages = selectedImages.sort(() => 0.5 - Math.random()).slice(0, displayedImgNum);
 
   const [product, setProduct] = useState(null);

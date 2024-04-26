@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import GenderSelectionPage from './components/GenderSelectionPage';
 import SelectImagePage from './components/SelectImagePage';
-import CompletionPage from './components/CompletionPage';  // 确保你有一个显示最后完成页面的组件
+import CompletionPage from './components/CompletionPage';
 import getImagesByGender from './utils/imageHelper';
 
 function App() {
   const [step, setStep] = useState(0);
   const [gender, setGender] = useState('');
-  const [selections, setSelections] = useState(new Array(9).fill([]));
-  const [isCompleted, setIsCompleted] = useState(false);  // 新状态，用于追踪是否完成了选择
+  const stepNum = 9;
+  const [selections, setSelections] = useState(new Array(stepNum).fill([]));
+  const [isCompleted, setIsCompleted] = useState(false);
 
   const imagesByStep = getImagesByGender(gender);
 
@@ -19,25 +20,25 @@ function App() {
 
   const handleSelect = (step, image) => {
     const stepSelections = selections[step];
-    const index = stepSelections.indexOf(image.src); // 使用 image.src 而不是 image.alt 来识别图像
+    const index = stepSelections.indexOf(image.src);
     if (index === -1) {
       if (stepSelections.length < 2) {
         const newSelections = [...selections];
-        newSelections[step] = [...stepSelections, image.src]; // 将 image.src 添加到选择中
+        newSelections[step] = [...stepSelections, image.src];
         setSelections(newSelections);
       }
     } else {
       const newSelections = [...selections];
-      newSelections[step] = stepSelections.filter(item => item !== image.src); // 移除 image.src
+      newSelections[step] = stepSelections.filter(item => item !== image.src);
       setSelections(newSelections);
     }
   };
 
   const handleNext = () => {
-    if (step < 9) {
+    if (step < stepNum) {
       setStep(step + 1);
     } else {
-      setIsCompleted(true);  // 设置完成状态
+      setIsCompleted(true);
     }
   };
 
@@ -45,8 +46,12 @@ function App() {
     if (step > 0) setStep(step - 1);
   };
 
+  useEffect(() => {
+    console.log(step);
+  }, [step]); // 依赖项数组中包含 step，以便在 step 更改时运行此代码
+
   if (isCompleted) {
-    return <CompletionPage selectedImages={selections.flat()} gender={gender} />; // 显示完成页面，传递选中的图片和性别
+    return <CompletionPage selectedImages={selections.flat()} gender={gender} />;
   }
 
   return (
@@ -68,7 +73,7 @@ function App() {
               <button className="btn btn-outline-light" onClick={handleBack} disabled={step === 0}>
                 &larr; Back
               </button>
-              <button className="btn btn-outline-light" onClick={handleNext} disabled={step === 10 && selections.every(group => group.length === 0)}>
+              <button className="btn btn-outline-light" onClick={handleNext} disabled={step === stepNum + 1 && selections.every(group => group.length === 0)}>
                 Next &rarr;
               </button>
             </div>
