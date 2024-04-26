@@ -66,17 +66,18 @@ function CompletionPage({ selectedImages, gender }) {
         <p style={{ color: '#333333' }}>{product.description1}</p>
         <p style={{ color: '#333333' }}>{product.description2}</p>
         <button style={{
-          marginTop: '20px',
-          padding: '10px 20px',
-          fontSize: '1em',
-          backgroundColor: 'transparent',
-          color: 'black',
-          border: '2px solid black',
-          borderRadius: '5px',
-          cursor: 'pointer'
-        }}>
-          Discover More &rarr;
-        </button>
+  marginTop: '20px',
+  padding: '10px 20px',
+  fontSize: '1em',
+  backgroundColor: 'black',  // 设置背景色为黑色
+  color: 'white',            // 设置文字颜色为白色
+  border: '2px solid black',
+  borderRadius: '5px',
+  cursor: 'pointer'
+}}>
+  Discover More
+</button>
+
       </div>
     </div>
   );
