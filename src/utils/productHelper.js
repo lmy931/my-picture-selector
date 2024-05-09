@@ -36,8 +36,8 @@ const products = [
     description2: "Dark Virginian Cedar, Whiskey, Oak, Vanilla, Incense, Tobacco leaves, Strawberry, White Lily, Fir Resin"
   },
   {
-    name: "Illuminate",
-    imagePath: "/images/products/illuminate.png",
+    name: "illuminate",
+    imagePath: "/images/products/illuminate_product.png",
     description1: "Luminous through a gradient sky, the central spark of a soft glow.",
     description2: "Felt as truth, a tangible light, the sinking sun as simultaneously permanent and fleeting."
   },
