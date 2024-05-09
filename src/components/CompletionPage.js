@@ -60,7 +60,7 @@ function CompletionPage({ selectedImages, gender }) {
         <img 
           src={`${process.env.REACT_APP_BASE_PATH}${product.imagePath}`}
           alt="Product Image" 
-          style={{ maxWidth: '200px', height: 'auto', padding: '20px', minHeight: '200px' }} 
+          style={{ maxWidth: '200px', height: 'auto', padding: '20px', minHeight: '144px' }}
         />
         <h3 style={{ color: '#333333' }}>{product.name}</h3>
         <p style={{ color: '#333333' }}>{product.description1}</p>
