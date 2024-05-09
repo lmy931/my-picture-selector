@@ -13,6 +13,21 @@ function App() {
 
   const imagesByStep = getImagesByGender(gender);
 
+  useEffect(() => {
+    if (gender) {
+      preloadImages(imagesByStep);
+    }
+  }, [gender]);  // 当性别确定后，预加载所有相关图片
+
+  const preloadImages = (images) => {
+    images.forEach(group => {
+      group.forEach(image => {
+        const img = new Image();
+        img.src = image.src;
+      });
+    });
+  };
+
   const handleSelectGender = selectedGender => {
     setGender(selectedGender);
     setStep(1);
@@ -20,7 +35,7 @@ function App() {
 
   const handleSelect = (step, image) => {
     const newSelections = [...selections];
-    newSelections[step] = [image.src];  // 总是更新当前步骤的选择为新点击的图片
+    newSelections[step] = [image.src];
     setSelections(newSelections);
   };
 
@@ -35,10 +50,6 @@ function App() {
   const handleBack = () => {
     if (step > 0) setStep(step - 1);
   };
-
-  useEffect(() => {
-    console.log(step);
-  }, [step]); // 依赖项数组中包含 step，以便在 step 更改时运行此代码
 
   if (isCompleted) {
     return <CompletionPage selectedImages={selections.flat()} gender={gender} />;
