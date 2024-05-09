@@ -19,19 +19,9 @@ function App() {
   };
 
   const handleSelect = (step, image) => {
-    const stepSelections = selections[step];
-    const index = stepSelections.indexOf(image.src);
-    if (index === -1) {
-      if (stepSelections.length < 1) {  // 修改这里，使得每步只能选择一张图片
-        const newSelections = [...selections];
-        newSelections[step] = [image.src];  // 直接设置为单个图片的数组
-        setSelections(newSelections);
-      }
-    } else {
-      const newSelections = [...selections];
-      newSelections[step] = [];  // 如果已经选择了图片，再次点击则取消选择
-      setSelections(newSelections);
-    }
+    const newSelections = [...selections];
+    newSelections[step] = [image.src];  // 总是更新当前步骤的选择为新点击的图片
+    setSelections(newSelections);
   };
 
   const handleNext = () => {

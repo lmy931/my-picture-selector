@@ -38,7 +38,8 @@ const getImagesByGender = (gender) => {
     ]
   };
 
-  return Array.from({ length: 9 }, (_, i) => {
+  const stepNum = 9;
+  return Array.from({ length: stepNum }, (_, i) => {
     return (imageSets[gender] && imageSets[gender][i] || imageSets['Neutral'][i % imageSets['Neutral'].length])
       .map(img => ({ src: `${path}${img}`, alt: `${gender} Image ${img}` }));
   });
